@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقعي الأول</title>
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #14142d;
+            color: white;
+            font-family: 'Alexandria', sans-serif;
+            direction: rtl;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .logo {
+            width: 50%;
+            max-width: 480px;
+            margin-top: 5%;
+            position: relative;
+        }
+
+        .chi3ar {
+            position: absolute;
+            top: 5%;
+            right: 5%;
+            width: 40px;
+        }
+
+        .tawasol {
+            position: absolute;
+            top: 5%;
+            right: calc(5% + 50px);
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: 40px;
+            text-align: center;
+            margin-top: 20px;
+            line-height: 1.2;
+        }
+
+        .button {
+            margin-top: 30px;
+            width: 200px;
+            height: 60px;
+            background-image: url('but.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            border: none;
+            cursor: pointer;
+            background-color: transparent;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button-text {
+            color: #14142d;
+            font-size: 18px;
+            font-weight: 600;
+            font-family: 'Alexandria', sans-serif;
+        }
+
+        .ground-image {
+            width: 190px;
+            height: 190px;
+            border-radius: 15px;
+            object-fit: cover;
+            position: absolute;
+            top: 34%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .white-box {
+            width: 400px;
+            height: 400px;
+            background-color: white;
+            border: 3px solid purple;
+            position: absolute;
+            top: 115%;
+            left: 49.5%;
+            transform: translateX(-50%);
+            background-image: url('1.jpg');
+            background-size: cover;
+            background-position: center;
+            max-width: 100%;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 200px;
+            position: absolute;
+            top: 126%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .change-image-btn {
+            width: 60px;
+            height: 60px;
+            background-image: url('p.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            border: none;
+            cursor: pointer;
+            background-color: transparent;
+        }
+
+        .reset-image-btn {
+            width: 60px;
+            height: 60px;
+            background-image: url('q.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            border: none;
+            cursor: pointer;
+            background-color: transparent;
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                width: 70%;
+            }
+
+            .chi3ar {
+                width: 30px;
+            }
+
+            .tawasol {
+                font-size: 18px;
+                right: calc(5% + 40px);
+            }
+
+            h1 {
+                font-size: 32px;
+                margin-top: 15px;
+            }
+
+            .button {
+                width: 180px;
+                height: 50px;
+            }
+
+            .button-text {
+                font-size: 16px;
+            }
+
+            .white-box {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                width: 80%;
+            }
+
+            h1 {
+                font-size: 24px;
+                margin-top: 10px;
+            }
+
+            .button {
+                width: 150px;
+                height: 45px;
+            }
+
+            .button-text {
+                font-size: 14px;
+            }
+
+            .white-box {
+                width: 180px;
+                height: 180px;
+            }
+        }
+
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .popup img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .footer-text {
+            line-height: 1.6;
+            position: absolute;
+            top: 850px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            font-size: 18px;
+            color: white;
+            font-weight: 400;
+            width: 90%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .highlight-text {
+            white-space: nowrap;
+            position: absolute;
+            bottom: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffffff;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <img src="chi3ar.svg" alt="Chi3ar" class="chi3ar">
+    <span class="tawasol">تواصل</span>
+    <img src="nor.svg" alt="Logo" class="logo">
+    <img src="groundMobil.png" alt="Ground Mobil" class="ground-image">
+    <h1>تصاميم<br>إبداعية تحقق<br>اهدافك</h1>
+    
+    <!-- إضافة ID للزر -->
+    <div class="button" id="learnMoreButton">
+        <span class="button-text">أعرف المزيد</span>
+    </div>
+
+    <div class="white-box" onclick="showImage()"></div>
+
+    <div class="popup" id="popup">
+        <img src="1.jpg" id="popupImage" alt="Popup Image">
+    </div>
+
+    <div class="button-container">
+        <button class="change-image-btn" onclick="changeImage()"></button>
+        <button class="reset-image-btn" onclick="resetImage()"></button>
+    </div>
+
+    <div class="footer-text">
+        هذه الصورة تبرز لمحة من إبداعاتي في تصميم الجرافيك. كل تفصيلة وُضعت بعناية لتعكس رؤيتي وتحقق توازنًا بين الجمال والاحترافية. أسعى دائمًا إلى تقديم تصاميم تلهم وتترك أثرًا قويًا لدى الجمهور.
+    </div>
+
+    <div class="highlight-text">إلقاء نظرة على إحدى أعمالي المميزة</div>
+
+    <script>
+        let currentImageIndex = 0; 
+        let previousImageIndex = null; 
+
+        const images = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg'];
+
+        function changeImage() {
+            previousImageIndex = currentImageIndex; 
+            currentImageIndex = (currentImageIndex + 1) % images.length; 
+
+            const box = document.querySelector('.white-box');
+            box.style.backgroundImage = `url('${images[currentImageIndex]}')`;
+        }
+
+        function resetImage() {
+            if (previousImageIndex !== null) {
+                const box = document.querySelector('.white-box');
+                box.style.backgroundImage = `url('${images[previousImageIndex]}')`;
+                currentImageIndex = previousImageIndex; 
+                previousImageIndex = null; 
+            } else {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                const box = document.querySelector('.white-box');
+                box.style.backgroundImage = `url('${images[currentImageIndex]}')`;
+            }
+        }
+
+        function showImage() {
+            const box = document.querySelector('.white-box');
+            const popup = document.getElementById('popup');
+            const popupImage = document.getElementById('popupImage');
+            const currentImage = getComputedStyle(box).backgroundImage;
+            const imageUrl = currentImage.replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
+
+            popupImage.src = imageUrl;
+            popup.style.display = 'flex';
+        }
+
+        document.getElementById('popup').addEventListener('click', function() {
+            this.style.display = 'none';
+        });
+
+        // وظيفة انزلاق الصفحة للأسفل مع أنيميشن سلس
+        document.getElementById('learnMoreButton').addEventListener('click', function() {
+            window.scrollBy({ top: 520, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
